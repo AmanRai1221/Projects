@@ -19,4 +19,4 @@ function displayTime(){
 
 }
 
-setInterval(displayTime, 1000)
+setInterval(displayTime, 1000) //For Moving Hands 
