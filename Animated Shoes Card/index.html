@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="imgBx">
+                <img src="images/image1.png" alt="#" id="shoeImage">
+            </div>
+            <div class="contentBx">
+                <h2>Nike Shoes</h2>
+                <div class="size">
+                    <h3>Size:</h3>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                </div>
+                <div class="color">
+                    <h3>Color:</h3>
+                    <span data-color="#fff" data-img="images\whiteImg.png"></span>
+                    <span data-color="#36b6dc" data-img="images\skyImg.png"></span>
+                    <span data-color="#db2e2e" data-img="images\redImg.png"></span>
+                </div>
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const colorOptions = document.querySelectorAll('.contentBx .color span');
+        const card = document.querySelector('.card');
+        const shoeImage = document.getElementById('shoeImage');
+
+        colorOptions.forEach(span =>{
+            span.addEventListener('click', ()=>{
+                let color = span.getAttribute('data-color');
+                let imgSrc = span.getAttribute('data-img');
+                card.style.setProperty('--hover-color', color);
+                shoeImage.src = imgSrc;
+            });
+        });
+    </script>
+</body>
+</html>
